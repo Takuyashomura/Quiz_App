@@ -27,7 +27,7 @@ class Quiz {
     judgeCorrectAnswer(answer){
         return answer === this._correctAnswer;
     }
-/*
+
     static async fetchAndCreateQuizzes(){
         //QUizFetcherからクイズリストを作成
         const quizList = await QuizFetcher.fetch();
@@ -48,8 +48,7 @@ class Quiz {
             return new Quiz(quizData);
         })
     }
-    */
-   static async fetchAndCreateQuizzes(){
+   /*static async fetchAndCreateQuizzes(){
     const QuizList = await QuizFetcher.fetch();
 
         return QuizList.results.map(result => {
@@ -61,8 +60,7 @@ class Quiz {
         })
         .map(quizData => {
             return new Quiz(quizData);
-    });
-}
+    });*/
 };
 
 export default Quiz;
