@@ -16,6 +16,7 @@ const mockStore = configureMockStore( middlewares );
 //////////////////////////////////////////////////////////////////////
 
 describe('quizActionCreatorのテスト' ,() => {
+    
     it('fetch成功時、FETCH_QUIZZES_SUCCESと一緒にクイズデータが返される',async () => {
         const expectedResults = [{
             question: 'a',
