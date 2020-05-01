@@ -14,7 +14,6 @@ class Quiz extends React.Component {
             numberOfCorrect: 0
         };
     };
-
     componentDidMount() {
         this.restart();
     };
@@ -47,8 +46,7 @@ class Quiz extends React.Component {
     render() {
         const { quizzes } = this.props.quizInfo;
         const { currentIndex } = this.state;
-
-        if (quizzes.length === 0) {
+        if (quizzes.length === 0 ) {
             return this.renderLoading();
         }
         if (quizzes.length > 0 && currentIndex < quizzes.length) {

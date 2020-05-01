@@ -6,9 +6,11 @@ const API_URL = 'https://opentdb.com/api.php?amount=10&type=multiple';
 export const FETCH_QUIZZES_REQUEST = 'FETCH_QUIZZES_REQUEST';
 export const FETCH_QUIZZES_SUCCES = 'FETCH_QUIZZES_SUCCES';
 export const FETCH_QUIZZES_FAILUR = 'FETCH_QUIZZES_FAILUR';
+export const FETCH_QUIZZES_RESET = 'FETCH_QUIZZES_RESET';
 
 export const fetchQuizzes = ()=> {
     return async ( dispatch ) => {
+        dispatch( fetchQuizzesReset() );
         dispatch( fetchQuizzesRequest() );
         try{
             const response = await axios.get(API_URL);
@@ -38,5 +40,11 @@ export const fetchQuizzes = ()=> {
         return {
             type: FETCH_QUIZZES_FAILUR,
             error
+        };
+    };
+
+    const fetchQuizzesReset = () => {
+        return{
+            type: FETCH_QUIZZES_RESET
         };
     };
