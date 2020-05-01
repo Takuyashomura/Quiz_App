@@ -21,15 +21,16 @@ export const quizReducer = (state = initialState, action) =>{
         case FETCH_QUIZZES_SUCCES:
             return{
                 ...state,
+                isLoading: false,
                 quizzes: action.data,
-                isLoading: false
+                error: null
             }
 
         case FETCH_QUIZZES_FAILUR:
             return{
                 ...state,
-                error: action.error,
-                isLoading: false
+                isLoading: false,
+                error: action.error
             }
         default:
             return state;

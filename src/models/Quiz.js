@@ -32,7 +32,7 @@ class Quiz {
         //QUizFetcherからクイズリストを作成
         const quizList = await QuizFetcher.fetch();
 
-        return createQuizInstancesWithData(quizList.results);
+        return Quiz.createQuizInstancesWithData(quizList.results);
     }
 
     static createQuizInstancesWithData(quizDataList){

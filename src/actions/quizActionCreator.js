@@ -14,9 +14,10 @@ export const fetchQuizzes = ()=> {
             const response = await axios.get(API_URL);
             const results = response.data.results;
             const data = quizModel.createQuizInstancesWithData( results );
-            dispatch( fetchQuizzesSucces(data) );
+
+            dispatch( fetchQuizzesSucces( data ) );
         }catch (error){
-            dispatch( fetchQuizzesFailur(error) );
+            dispatch( fetchQuizzesFailur( error ) );
         };
     };
 };
