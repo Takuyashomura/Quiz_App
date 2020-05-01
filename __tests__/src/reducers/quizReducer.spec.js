@@ -35,7 +35,7 @@ describe('quizReducerのテスト', () => {
         const currentState = {
             isLoading: false,
             quizzes: [],
-            error: 'dummy'
+            error: null
         };
 
         const newState = quizReducer( currentState, action );
@@ -43,7 +43,7 @@ describe('quizReducerのテスト', () => {
         expect( newState ).toStrictEqual({
             isLoading: false,
             quizzes: dummyData,
-            error: 'dummy'
+            error: null
         });
     });
 
