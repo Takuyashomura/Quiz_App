@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import {FETCH_QUIZZES_REQUEST,
         FETCH_QUIZZES_SUCCES,
         FETCH_QUIZZES_FAILUR,
+        FETCH_QUIZZES_RESET,
         fetchQuizzes} from '../../../src/actions/quizActionCreator';
 import quizModel from '../../../src/models/Quiz';
 
@@ -35,6 +36,9 @@ describe('quizActionCreatorのテスト' ,() => {
         await store.dispatch( fetchQuizzes() );
         expect( store.getActions() ).toStrictEqual([
             {
+                type: FETCH_QUIZZES_RESET
+            },
+            {
                 type: FETCH_QUIZZES_REQUEST
             },
             {
@@ -57,6 +61,9 @@ describe('quizActionCreatorのテスト' ,() => {
         const store = mockStore();
         await store.dispatch( fetchQuizzes());
         expect( store.getActions() ).toStrictEqual([
+        {
+            type: FETCH_QUIZZES_RESET
+        },
         {
             type: FETCH_QUIZZES_REQUEST
         },

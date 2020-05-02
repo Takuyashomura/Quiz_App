@@ -2,7 +2,8 @@ import { quizReducer } from '../../../src/reducers/quizReducer';
 import {
     FETCH_QUIZZES_REQUEST,
     FETCH_QUIZZES_SUCCES,
-    FETCH_QUIZZES_FAILUR
+    FETCH_QUIZZES_FAILUR,
+    FETCH_QUIZZES_RESET
 } from '../../../src/actions/quizActionCreator';
 
 describe('quizReducerのテスト', () => {
@@ -68,5 +69,25 @@ describe('quizReducerのテスト', () => {
                 quizzes: [],
                 error: dummyError
             });
-        })
+    })
+
+    it('action.type === FETCH_QUIZZES_RESETの時', () => {
+        const action = {
+            type: FETCH_QUIZZES_RESET,
+        }
+
+        const currentState = {
+            isLoading: false,
+            quizzes: ['a', 'b', 'c'],
+            error: null
+        }
+
+        const newState = quizReducer( currentState, action);
+
+        expect( newState ).toStrictEqual({
+            isLoading: false,
+            quizzes: [],
+            error: null
+        });
+    });
 })

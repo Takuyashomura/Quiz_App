@@ -1,6 +1,7 @@
 import { FETCH_QUIZZES_REQUEST,
         FETCH_QUIZZES_SUCCES,
-        FETCH_QUIZZES_FAILUR
+        FETCH_QUIZZES_FAILUR,
+        FETCH_QUIZZES_RESET
 } from '../actions/quizActionCreator';
 
 //State初期値
@@ -31,6 +32,14 @@ export const quizReducer = (state = initialState, action) =>{
                 ...state,
                 isLoading: false,
                 error: action.error
+            }
+        
+        case FETCH_QUIZZES_RESET:
+            return{
+                ...state,
+                isLoading: false,
+                quizzes: [],
+                error: null
             }
         default:
             return state;
