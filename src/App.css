@@ -1,0 +1,9 @@
+body{
+    margin: 0 auto;
+}
+
+.App{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
